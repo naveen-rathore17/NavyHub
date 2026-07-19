@@ -22,6 +22,27 @@ const CHANNELS = [
     icon: "🧳",
   },
   {
+    id: "sony",
+    name: "Sony Sports",
+    tag: "Cricket",
+    color: "#22c55e",
+    src: "https://twitcasting.tv/g:108062897540699902926/embeddedplayer/live",
+    type: "hls",
+    description: "Cricket Coverage",
+    icon: "🏏",
+  },
+  {
+    id: "willow",
+    name: "Willow Cricbuzz",
+    tag: "Cricket",
+    color: "#22c55e",
+    src: "https://channel-13-alpha.vercel.app/",
+    type: "hls",
+    description: "Cricket Coverage",
+    icon: "🏏",
+  },
+
+  {
     id: "zee",
     name: "Zee Cinema",
     tag: "MOVIES",
