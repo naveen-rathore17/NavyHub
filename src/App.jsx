@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 
 const CHANNELS = [
   {
-    id: "willow",
+    id: "willow tv",
     name: "Willow TV",
     tag: "CRICKET",
     color: "#22c55e",
@@ -27,17 +27,17 @@ const CHANNELS = [
     tag: "Cricket",
     color: "#22c55e",
     src: "https://twitcasting.tv/g:108062897540699902926/embeddedplayer/live",
-    type: "hls",
+    type: "iframe",
     description: "Cricket Coverage",
     icon: "🏏",
   },
   {
-    id: "willow",
+    id: "willow cricbuzz",
     name: "Willow Cricbuzz",
     tag: "Cricket",
     color: "#22c55e",
     src: "https://channel-13-alpha.vercel.app/",
-    type: "hls",
+    type: "iframe",
     description: "Cricket Coverage",
     icon: "🏏",
   },
@@ -54,7 +54,7 @@ const CHANNELS = [
   },
 
   {
-    id: "Star",
+    id: "Star 1",
     name: "Sport 1 HD",
     tag: "Cricket",
     color: "#e7b55d",
@@ -65,7 +65,7 @@ const CHANNELS = [
   },
 
   {
-    id: "Star",
+    id: "Star 2",
     name: "Sport 2 HD",
     tag: "Cricket",
     color: "#e7b55d",
@@ -254,7 +254,9 @@ export default function NavyHUB() {
     const video = videoRef.current;
     if (!video) return;
     if (video.paused) {
-      video.play();
+      video.play().catch((err) => {
+        if (err.name !== "AbortError") console.error(err);
+      });
       showNotif("▶ Playing");
     } else {
       video.pause();
